@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeadsideBot — The All-in-One Discord Bot for Deadside Servers</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117; color: #c9d1d9; line-height: 1.6; min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .hero { text-align: center; padding: 4rem 0 3rem; }
+        .hero h1 { font-size: 3rem; color: #fff; margin-bottom: 0.5rem; }
+        .hero h1 span { color: #58a6ff; }
+        .hero p { font-size: 1.3rem; color: #8b949e; max-width: 600px; margin: 0 auto; }
+        .badge {
+            display: inline-block; background: #1f6feb; color: #fff; padding: 0.3rem 1rem;
+            border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 1rem;
+        }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 3rem 0; }
+        .feature { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; }
+        .feature h3 { color: #58a6ff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .feature p { color: #8b949e; font-size: 0.9rem; }
+        .commands { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .commands h2 { color: #fff; margin-bottom: 1rem; }
+        .cmd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
+        .cmd { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 0.6rem 1rem; font-family: monospace; font-size: 0.85rem; }
+        .cmd b { color: #58a6ff; }
+        .legal-links { text-align: center; margin: 3rem 0; padding: 2rem; background: #161b22; border-radius: 8px; border: 1px solid #30363d; }
+        .legal-links h2 { color: #fff; margin-bottom: 1rem; }
+        .legal-links a {
+            display: inline-block; margin: 0.5rem; padding: 0.8rem 2rem; background: #1f6feb;
+            color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600;
+        }
+        .legal-links a:hover { background: #388bfd; }
+        .premium {
+            background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid #58a6ff;
+            border-radius: 8px; padding: 2rem; text-align: center; margin: 2rem 0;
+        }
+        .premium h2 { color: #58a6ff; }
+        .premium .price { font-size: 2rem; color: #fff; font-weight: 700; }
+        .premium .price small { font-size: 1rem; color: #8b949e; }
+        footer { text-align: center; padding: 2rem; color: #484f58; font-size: 0.85rem; }
+        .free-tag { color: #3fb950; font-weight: 700; }
+        .premium-tag { color: #d29922; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>💀 <span>DeadsideBot</span></h1>
+            <p>The all-in-one Discord bot for Deadside servers. Killfeed, stats, economy, store, gambling, and more.</p>
+            <div class="badge">20 Slash Commands · Free + Premium</div>
+        </div>
+        <div class="features">
+            <div class="feature"><h3>📡 Live Killfeed <span class="free-tag">FREE</span></h3><p>Real-time PvP kills with killer, victim, weapon, and distance in a dedicated #killfeed channel.</p></div>
+            <div class="feature"><h3>📊 Player Stats <span class="free-tag">FREE</span></h3><p>Kills, deaths, K/D, best weapon, longest kill, kill streaks, and weapon mastery levels.</p></div>
+            <div class="feature"><h3>💰 Economy <span class="free-tag">FREE</span></h3><p>Earn coins from kills (10), deaths (5), longest kill (50), and daily bonuses (20).</p></div>
+            <div class="feature"><h3>🛒 Store <span class="free-tag">FREE</span></h3><p>20+ items at in-game prices. Buy with coins, creates a ticket for admin fulfillment.</p></div>
+            <div class="feature"><h3>🎲 Gambling & Crime <span class="free-tag">FREE</span></h3><p>Coinflip (2x), dice (up to 3x), crime system with risk/reward. Keeps users engaged!</p></div>
+            <div class="feature"><h3>🏆 Achievements <span class="premium-tag">PREMIUM</span></h3><p>11 unlockable badges: First Blood, Legend, God Sniper, Rampage, Weapon Master.</p></div>
+            <div class="feature"><h3>🎯 Bounty System <span class="premium-tag">PREMIUM</span></h3><p>Place bounties on players. Bot tracks kills and notifies when claimed.</p></div>
+            <div class="feature"><h3>⚡ Raid Alerts <span class="free-tag">FREE</span></h3><p>Auto-detects 3+ kills in 30s (triple kills, rampages) and posts alerts.</p></div>
+        </div>
+        <div class="commands">
+            <h2>📋 All 20 Slash Commands</h2>
+            <div class="cmd-grid">
+                <div class="cmd"><b>/stats</b> — Player stats</div>
+                <div class="cmd"><b>/leaderboard</b> — Top killers</div>
+                <div class="cmd"><b>/serverkd</b> — Server K/D</div>
+                <div class="cmd"><b>/globalkd</b> — Global K/D</div>
+                <div class="cmd"><b>/killfeed</b> — Recent kills</div>
+                <div class="cmd"><b>/streak</b> — Kill streaks</div>
+                <div class="cmd"><b>/mastery</b> — Weapon mastery</div>
+                <div class="cmd"><b>/balance</b> — Check coins</div>
+                <div class="cmd"><b>/link</b> — Link IGN</div>
+                <div class="cmd"><b>/daily</b> — Daily bonus</div>
+                <div class="cmd"><b>/store</b> — Browse items</div>
+                <div class="cmd"><b>/buy</b> — Buy items</div>
+                <div class="cmd"><b>/gamble</b> — Bet coins</div>
+                <div class="cmd"><b>/crime</b> — Risky earnings</div>
+                <div class="cmd"><b>/trade</b> — Send coins</div>
+                <div class="cmd"><b>/raidalerts</b> — Raid detection</div>
+                <div class="cmd"><b>/event</b> — Seasonal events</div>
+                <div class="cmd"><b>/achievements</b> — Premium</div>
+                <div class="cmd"><b>/bounty</b> — Premium</div>
+                <div class="cmd"><b>/setupchannels</b> — Admin setup</div>
+            </div>
+        </div>
+        <div class="premium">
+            <h2>⭐ Premium</h2>
+            <p style="color: #8b949e; margin: 1rem 0;">Unlock achievements, bounties, multi-server, custom branding, anti-cheat, priority support.</p>
+            <div class="price">$8.99<small>/month</small> · or · $79<small>/year</small></div>
+            <p style="color: #484f58; margin-top: 1rem;">27% annual discount · Cancel anytime</p>
+        </div>
+        <div class="legal-links">
+            <h2>📜 Legal</h2>
+            <p style="color: #8b949e; margin-bottom: 1rem;">By using DeadsideBot, you agree to our Terms and Privacy Policy.</p>
+            <a href="./TERMS_OF_SERVICE.html">Terms of Service</a>
+            <a href="./PRIVACY_POLICY.html">Privacy Policy</a>
+        </div>
+        <footer>
+            <p>DeadsideBot by Yesukai Studios · Not affiliated with BadPixel Studio or the Deadside game</p>
+            <p>Contact: NATEROD23@gmail.com · <a href="https://github.com/naterod23-lgtm/deadsidebot" style="color: #58a6ff;">GitHub</a></p>
+            <p>© 2026 Yesukai Studios. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

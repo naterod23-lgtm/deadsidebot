@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — DeadsideBot</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.7; margin: 0; padding: 0; }
+.container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+h1, h2, h3 { color: #58a6ff; }
+h1 { border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+a { color: #58a6ff; }
+hr { border: none; border-top: 1px solid #30363d; margin: 2rem 0; }
+code { background: #161b22; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+.back { display: inline-block; margin-top: 2rem; color: #8b949e; text-decoration: none; }
+</style>
+</head>
+<body><div class="container">
+<h1>DeadsideBot — Privacy Policy</h1>
+<p><strong>Last Updated:</strong> October 9, 2026</p>
+<h2>1. Overview</h2>
+<p>This Privacy Policy describes how Yesukai Studios ("we", "us", "our") collects, uses, stores, and protects your data when you use DeadsideBot ("the Bot"), our Discord bot for Deadside game server communities.</p>
+<p>We are committed to protecting your privacy and being transparent about what data we collect and why. This policy complies with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and other applicable privacy laws.</p>
+<h2>2. Data Controller</h2>
+<p><strong>Yesukai Studios</strong> is the data controller responsible for your data. For privacy inquiries, contact us at <strong>NATEROD23@gmail.com</strong>.</p>
+<h2>3. What Data We Collect</h2>
+<h3>3.1 Discord Account Data</h3>
+<p>| Data Point | Purpose | Required |
+|---|---|---|
+| Discord User ID | Identify users, track balances, link accounts | ✅ Yes |
+| Discord Username | Display in stats, leaderboards, tickets | ✅ Yes |
+| Discord Server (Guild) ID | Channel setup, multi-server support | ✅ Yes (for server owners) |
+| Channel IDs | Reference channels for auto-updating content | ✅ Yes (for server owners) |
+| Discord Avatar URL | Display in some embeds | ❌ No — we don't collect this |</p>
+<h3>3.2 Game Data (from Deadside Server via SFTP)</h3>
+<p>| Data Point | Source | Purpose |
+|---|---|---|
+| Killer player name | Kill log | Stats, leaderboards, killfeed |
+| Victim player name | Kill log | Stats, death tracking |
+| Weapon used | Kill log | Weapon mastery, stats |
+| Kill distance | Kill log | Longest kill tracking |
+| Kill timestamp | Kill log | Chronological killfeed |
+| Player Steam ID / EOS ID | Kill log | Currently not parsed (future feature) |</p>
+<h3>3.3 Economy Data</h3>
+<p>| Data Point | Purpose |
+|---|---|
+| Coin balance | Track user's earned currency |
+| Transaction history | Track store purchases, trades, gambling |
+| Daily bonus claims | Prevent duplicate daily claims |
+| Linked in-game name | Connect Discord account to Deadside character |
+| Store tickets | Track item purchase requests and fulfillment |</p>
+<h3>3.4 SFTP Credentials (Server Owners Only)</h3>
+<p>| Data Point | Purpose |
+|---|---|
+| SFTP host IP | Connect to Deadside server |
+| SFTP username | Authenticate SFTP connection |
+| SFTP password | Authenticate SFTP connection |
+| SFTP base path | Locate kill log file |</p>
+<p>SFTP credentials are stored in a configuration file on our server. They are:
+- Stored in plain text in a local config file (not encrypted at rest)
+- Used solely to read kill logs via SFTP
+- Never shared with third parties
+- Never used to write, modify, or delete files on your game server
+- Accessible only by server administrators with root access</p>
+<p><strong>We strongly recommend using a dedicated SFTP account with read-only access where possible.</strong></p>
+<h2>4. How We Use Your Data</h2>
+<h3>4.1 Primary Uses</h3>
+<ol>
+<li><strong>Display kill data</strong> in Discord channels (killfeed, stats, leaderboards)</li>
+<li><strong>Manage the economy</strong> — track coin balances, process store purchases</li>
+<li><strong>Compute statistics</strong> — K/D ratios, weapon mastery, kill streaks, achievements</li>
+<li><strong>Auto-create and manage channels</strong> in your Discord server</li>
+<li><strong>Verify Premium subscriptions</strong> and gate premium features</li>
+</ol>
+<h3>4.2 We Do NOT Use Your Data For</h3>
+<ul>
+<li>❌ Advertising or marketing</li>
+<li>❌ Selling or sharing with third parties</li>
+<li>❌ Training machine learning models</li>
+<li>❌ Profiling or behavioral analysis</li>
+<li>❌ Credit checks or identity verification</li>
+<li>❌ Any purpose unrelated to the Bot's functionality</li>
+</ul>
+<h2>5. Legal Basis for Processing (GDPR)</h2>
+<p>Under the GDPR, we process your data based on:</p>
+<p>| Basis | Data | Justification |
+|---|---|---|
+| <strong>Consent</strong> | Discord user data, linked in-game name | You voluntarily use the Bot and <code>/link</code> your account |
+| <strong>Contract</strong> | Premium subscription data | You pay for Premium, we provide the service |
+| <strong>Legitimate Interest</strong> | Kill data from game server | The Bot's core purpose is to display game stats |
+| <strong>Legal Obligation</strong> | Payment records (Premium) | Tax and financial record requirements |</p>
+<p>You may withdraw consent at any time by unlinking your account or removing the Bot from your server.</p>
+<h2>6. Data Storage</h2>
+<h3>6.1 Where Data Is Stored</h3>
+<ul>
+<li>All data is stored on our server (VPS hosted in the United States).</li>
+<li>Data is stored in JSON files on the local filesystem.</li>
+<li>No cloud database, no third-party data storage, no data warehouses.</li>
+<li>No CDN or external content delivery.</li>
+</ul>
+<h3>6.2 Data Security</h3>
+<ul>
+<li>The server is protected by SSH key authentication and firewall.</li>
+<li>SFTP credentials are stored in a local config file (not encrypted).</li>
+<li>Discord bot tokens are stored in a file with restricted permissions (chmod 600).</li>
+<li>No data is transmitted to third parties.</li>
+<li>Access to the server is limited to authorized administrators.</li>
+</ul>
+<h3>6.3 Data Retention</h3>
+<p>| Data Type | Retention Period |
+|---|---|
+| Player stats (kills, deaths, K/D) | Retained while Bot is in your server; deleted within 30 days of removal |
+| Kill log data (recent kills) | Up to 90 days |
+| Economy data (balances, transactions) | Retained while Bot is in your server; deleted within 30 days |
+| Store tickets | Retained for 12 months for dispute resolution |
+| Premium payment records | Retained for 7 years (legal/tax requirement) |
+| Discord server data (channel IDs) | Deleted immediately when Bot is removed |
+| SFTP credentials | Deleted immediately when Bot is removed or server is reconfigured |</p>
+<h2>7. Your Rights</h2>
+<h3>7.1 GDPR Rights (EU/UK Users)</h3>
+<p>You have the right to:</p>
+<ol>
+<li><strong>Access</strong> — Request a copy of all data we hold about you.</li>
+<li><strong>Rectification</strong> — Request correction of inaccurate data.</li>
+<li><strong>Erasure</strong> — Request deletion of your data ("right to be forgotten").</li>
+<li><strong>Restriction</strong> — Request that we limit processing of your data.</li>
+<li><strong>Portability</strong> — Receive your data in a machine-readable format.</li>
+<li><strong>Objection</strong> — Object to processing based on legitimate interests.</li>
+<li><strong>Withdraw Consent</strong> — Withdraw consent at any time without affecting prior processing.</li>
+</ol>
+<h3>7.2 CCPA Rights (California Residents)</h3>
+<p>You have the right to:</p>
+<ol>
+<li><strong>Know</strong> — What personal information we collect and how it's used.</li>
+<li><strong>Delete</strong> — Request deletion of your personal information.</li>
+<li><strong>Opt-Out</strong> — Opt out of the sale of personal information (we do not sell data).</li>
+<li><strong>Non-Discrimination</strong> — Equal service regardless of exercising privacy rights.</li>
+</ol>
+<h3>7.3 How to Exercise Your Rights</h3>
+<p>Contact us at <strong>NATEROD23@gmail.com</strong> with:
+- Your Discord user ID
+- Your linked in-game name (if applicable)
+- The specific right you wish to exercise</p>
+<p>We will respond within 30 days. For erasure requests, your data will be deleted within 30 days of verification.</p>
+<h3>7.4 Automated Deletion</h3>
+<p>You can trigger immediate deletion of your linked data by:
+1. Using <code>/link</code> with a blank or different name (unlinks your Discord from your game name)
+2. Leaving a Discord server that uses the Bot
+3. Requesting server owner to remove the Bot (deletes all server data)</p>
+<h2>8. Children's Privacy</h2>
+<p>The Bot is not directed at children under 13. We do not knowingly collect data from children under 13. If you believe a child under 13 has provided data through the Bot, contact us and we will delete it immediately.</p>
+<p>Discord requires users to be at least 13 years old. Server owners are responsible for ensuring their community complies with Discord's age requirements.</p>
+<h2>9. Third-Party Services</h2>
+<h3>9.1 Discord</h3>
+<p>The Bot operates within Discord's platform. Discord's <a href="https://discord.com/privacy">Privacy Policy</a> and <a href="https://discord.com/terms">Terms of Service</a> apply to all Discord interactions. We process Discord data (user IDs, usernames, server IDs) but do not control Discord's data practices.</p>
+<h3>9.2 Deadside / GG Host</h3>
+<p>The Bot reads kill log data from your Deadside game server hosted on GG Host via SFTP. We do not have a relationship with BadPixel Studio (Deadside developer) or GG Host. Your game server data is subject to their respective privacy policies and terms of service.</p>
+<h3>9.3 Payment Processors (Premium Only)</h3>
+<p>If you purchase Premium, your payment is processed by our payment processor (Stripe, PayPal, or Discord's native monetization). We receive only the payment confirmation and subscription status — we do not see or store your full credit card number, bank account, or other payment details. The payment processor's privacy policy applies to all payment data.</p>
+<h2>10. Data Breach Response</h2>
+<p>In the event of a data breach:</p>
+<ol>
+<li>We will assess the scope and severity within 24 hours of discovery.</li>
+<li>Affected users will be notified within 72 hours (per GDPR requirements).</li>
+<li>SFTP credentials will be immediately rotated.</li>
+<li>A public incident report will be published if the breach affects more than 100 users.</li>
+<li>Relevant authorities will be notified as required by law.</li>
+</ol>
+<h2>11. International Data Transfers</h2>
+<p>Your data is stored on a server in the United States. If you are in the EU, UK, or other jurisdiction with data transfer restrictions, your data is transferred to the US under Standard Contractual Clauses (SCCs) or an equivalent mechanism. By using the Bot, you consent to this transfer.</p>
+<h2>12. Cookie Policy</h2>
+<p>The Bot does not use cookies, web beacons, or similar tracking technologies. It operates entirely through Discord's API and SFTP connections.</p>
+<h2>13. Changes to This Policy</h2>
+<p>We may update this Privacy Policy at any time. Material changes will be:
+- Posted in our Discord support server
+- Updated on this page with a new "Last Updated" date
+- Communicated via email if you've provided one</p>
+<p>Continued use of the Bot after changes constitutes acceptance of the updated policy.</p>
+<h2>14. Contact</h2>
+<p>For any privacy questions, concerns, or requests:</p>
+<ul>
+<li><strong>Email:</strong> NATEROD23@gmail.com</li>
+<li><strong>Discord:</strong> Join our support server (link in the Bot's <code>/serverinfo</code> command)</li>
+</ul>
+<p>We aim to respond to all privacy inquiries within 30 days.</p>
+<hr />
+<p>© 2026 Yesukai Studios. All rights reserved. DeadsideBot is not affiliated with BadPixel Studio or the Deadside game.</p>
+<p><a class="back" href="./">&#8592; Back to DeadsideBot</a></p>
+</div></body></html>

@@ -1,0 +1,10 @@
+*.pyc
+__pycache__/
+*.log
+token.txt
+config.json
+data/
+logs/
+shared/
+*.sav
+.env

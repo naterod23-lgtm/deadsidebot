@@ -92,21 +92,32 @@ async def on_guild_join(guild):
 
 @bot.event
 async def on_member_join(member):
-    """Welcome new members."""
-    for guild in bot.guilds:
-        if member in guild.members:
-            ch = channel_manager.get_channel(guild, "general")
-            if ch:
-                welcomes = [
-                    f"Yo {member.mention}! Welcome to the server! 🔥 Grab a seat and let's get some kills!",
-                    f"What's good {member.mention}! Welcome to the crew! 💀 Read #rules to get started!",
-                    f"{member.mention} just dropped in! Welcome! ⚔️ Use /link to link your IGN!",
-                    f"Welcome {member.mention}! 🎮 Check #store to buy items with coins you earn from kills!",
-                ]
-                try:
-                    await ch.send(random.choice(welcomes))
-                except:
-                    pass
+    """Welcome new members and assign Deadside role."""
+    guild = member.guild
+    
+    # Auto-assign the Deadside role
+    deadside_role = discord.utils.get(guild.roles, name="Deadside")
+    if deadside_role:
+        try:
+            await member.add_roles(deadside_role)
+            stats_engine.log(f"Assigned Deadside role to {member.name}")
+        except Exception as e:
+            stats_engine.log(f"Failed to assign Deadside role to {member.name}: {e}", "WARN")
+    
+    # Welcome message
+    ch = channel_manager.get_channel(guild, "general")
+    if ch:
+        welcomes = [
+            f"Yo {member.mention}! Welcome to TBS PVP! 🔥 Grab a seat and let's get some kills!",
+            f"What's good {member.mention}! Welcome to the crew! 💀 Read #rules to get started!",
+            f"{member.mention} just dropped in! Welcome! ⚔️ Use `/link` to link your IGN!",
+            f"Welcome {member.mention}! 🎮 Check #store to buy items with coins you earn from kills!",
+            f"{member.mention} has entered the wasteland! 🔥 Search **TBS_PVP** in Deadside Private Servers to join!",
+        ]
+        try:
+            await ch.send(random.choice(welcomes))
+        except:
+            pass
 
 # ============================================================
 # SLASH COMMANDS
